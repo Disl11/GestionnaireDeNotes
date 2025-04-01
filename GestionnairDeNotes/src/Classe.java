@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Classe {
 
     private String nomClasse;
-    private ArrayList<Classe> eleves;
+    private ArrayList<GestionEleve> eleves;
 
     public Classe(String nomClasse) {
         this.nomClasse = nomClasse;
@@ -15,14 +15,20 @@ public class Classe {
         return nomClasse;
     }
 
-    public ArrayList<Classe> getEleves() {
+    public ArrayList<GestionEleve> getEleves() {
         return eleves;
     }
 
-    public void afficherEleves() {
-        System.out.println("Liste des élèves dans la classe " + nomClasse + ":");
-        for (Classe eleve : eleves) {
-            System.out.println(eleve);
+  public void ajouterEleve(GestionEleve eleve){
+        eleves.add(eleve);
         }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Classe: " + nomClasse + "\n");
+        for (GestionEleve e : eleves) {
+            sb.append(e).append("\n");
+        }
+        return sb.toString();
     }
 }

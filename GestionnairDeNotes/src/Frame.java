@@ -33,8 +33,8 @@ public class Frame extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        prenomField.setBounds(200, 50, 200, 30);
-        nomField.setBounds(200, 100, 200, 30);
+        prenomField.setBounds(200, 100, 200, 30);
+        nomField.setBounds(200, 50, 200, 30);
         ageField.setBounds(200, 150, 200, 30);
         classeField.setBounds(200, 200, 200, 30);
 
@@ -112,10 +112,10 @@ public class Frame extends JFrame implements ActionListener {
             String prenomSelected = (String) table.getValueAt(selectedRow, 0);
             String nomSelected = (String) table.getValueAt(selectedRow, 1);
 
-            // Recherche de l'élève correspondant dans la map
+
             GestionEleve selectedEleve = null;
 
-            // On parcourt les classes et leurs élèves pour trouver celui sélectionné
+
             for (String key : classesMap.keySet()) {
                 for (GestionEleve eleve : classesMap.get(key)) {
                     if (eleve.getPrenom().equals(prenomSelected) && eleve.getNom().equals(nomSelected)) {
@@ -128,7 +128,6 @@ public class Frame extends JFrame implements ActionListener {
                 }
             }
 
-            // Si un élève est trouvé, on ouvre la fenêtre pour ajouter des notes
             if (selectedEleve != null) {
                 new FenetreNote(selectedEleve);
             } else {

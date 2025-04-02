@@ -58,6 +58,10 @@ public class FenetreNote extends JFrame implements ActionListener {
             }
         }
 
+        if(e.getSource() == validerButton){
+
+            }
+        }
     }
-}
+
 
